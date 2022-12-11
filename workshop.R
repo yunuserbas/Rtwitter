@@ -15,5 +15,11 @@ himars_data_clean <- cbind(himars_data, users_data(himars_data)[,c("id", "id_str
 
 himars_data_clean <- himars_data_clean[,!duplicated(colnames(himars_data_clean))]
 
-
+ts_plot(himars_data_clean, "15 minute") +
+  theme_minimal() +
+  theme(plot.title = element_text(face = "bold")) +
+  labs(x = "Time", y = "Tweet Frequency",
+       title = "Frequency of HIMARS-related Tweets",
+       subtitle = "Aggregated by 15-minute intervals",
+       caption = "Data collected by RTWeet through REST API") 
 
