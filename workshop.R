@@ -23,3 +23,21 @@ ts_plot(himars_data_clean, "15 minute") +
        subtitle = "Aggregated by 15-minute intervals",
        caption = "Data collected by RTWeet through REST API") 
 
+himars_data_clean %>% count(screen_name, sort = TRUE) %>%
+  mutate(screen_name = reorder(screen_name, n)) %>%
+  top_n(10) %>%
+  ggplot(aes(x = screen_name, y = n)) +
+  geom_col(color = "red", fill = "blue") +
+  labs(x = "Usernames", y = "Tweet Counts", title = "Top 10 Most Active HIMARS Accounts") +
+  coord_flip()
+
+
+
+
+
+
+
+
+
+
+
