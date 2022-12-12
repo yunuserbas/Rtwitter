@@ -1,6 +1,5 @@
 
 
-
 install.packages("rtweet")
 install.packages("tidyverse")
 
@@ -30,6 +29,9 @@ himars_data_clean %>% count(screen_name, sort = TRUE) %>%
   geom_col(color = "red", fill = "blue") +
   labs(x = "Usernames", y = "Tweet Counts", title = "Top 10 Most Active HIMARS Accounts") +
   coord_flip()
+
+
+
 
 
 
